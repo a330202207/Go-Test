@@ -1,4 +1,4 @@
-idea/*
-bin/*
-pkg/*
+.idea/*
+.bin/*
+.pkg/*
 
