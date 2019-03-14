@@ -3,7 +3,7 @@ package string
 import "testing"
 
 func TestReverse(t *testing.T) {
-	var tests = []struct{
+	var tests = []struct {
 		s, want string
 	}{
 		{"Backward", "drawkcaB"},
@@ -11,7 +11,7 @@ func TestReverse(t *testing.T) {
 		{"", ""},
 	}
 
-	for _, c := range tests{
+	for _, c := range tests {
 		got := Reverse(c.s)
 		if got != c.want {
 			t.Errorf("Reverse(%q) == %q, want %q", c.s, got, c.want)
