@@ -21,7 +21,7 @@ var (
 
 func init() {
 	var err error
-	Cfg, err = ini.Load("go_blog/conf/app.ini")
+	Cfg, err = ini.Load("go_blog-day1/conf/app.ini")
 	if err != nil {
 		log.Fatalf("无法解析 'conf/app.ini': %v", err)
 	}
