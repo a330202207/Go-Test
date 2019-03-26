@@ -7,7 +7,7 @@ import (
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 
-	"./pkg/setting"
+	"../pkg/setting"
 )
 
 var db *gorm.DB
@@ -36,7 +36,7 @@ func init() {
 	host = sec.Key("HOST").String()
 	tablePrefix = sec.Key("TABLE_PREFIX").String()
 
-	connection = fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
+	connection := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		user,
 		password,
 		host,
