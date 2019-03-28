@@ -1,5 +1,10 @@
 package models
 
+import (
+	"github.com/jinzhu/gorm"
+	"time"
+)
+
 type Article struct {
 	Model
 
@@ -27,7 +32,7 @@ func ExistArticleByID(id int) bool {
 }
 
 //获取文章数量
-func GetArticleToal(maps interface{}) (count int) {
+func GetArticleTotal(maps interface{}) (count int) {
 	db.Model(&Article{}).Where(maps).Count(&count)
 
 	return

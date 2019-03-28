@@ -22,10 +22,14 @@ func GetTags(c *gin.Context) {
 		maps["name"] = name
 	}
 
+	valid := validation.Validation{}
+
 	var state int = -1
 	if arg := c.Query("state"); arg != "" {
 		state = com.StrTo(arg).MustInt()
 		maps["state"] = state
+
+		valid.Range(state, 0, 1, "state").Message("状态只允许0或1")
 	}
 
 	code := err.SUCCESS
